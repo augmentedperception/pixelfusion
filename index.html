@@ -1,151 +1,18 @@
-<!doctype html><meta charset=utf-8>
-<title>Multi-view Image Fusion</title>
+<!doctype html>
+<html>
+<head>
+  <title>Multi-view Image Fusion</title>
 
-<style>
-    body {
-      font-family: Roboto, "Roboto", sans-serif;
-      background: #F0F0F0;
-      color: #696969;
-      padding: 0px 40px 40px 40px;
-    }
-    h1 {
-        display: block;
-        font-size: 2em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        color: #000;
-        }
-    h2 { 
-        display: block;
-        font-size: 1.5em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        color: #000;
-        }
-    h3 { 
-        display: block;
-        font-size: 1em;
-        margin-top: 0.67em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        }
-    h4 { 
-        display: block;
-        font-size: 1.4em;
-        margin-top: 0.0em;
-        margin-bottom: 0.67em;
-        margin-left: 0;
-        margin-right: 0;
-        font-weight: normal;
-        color: #000;
-        }
-    img {
-      margin: 0px 10px 10px 0;
-    }
-    .img {
-      box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
-      margin: 0px 10px 10px 0;
-    }
-    .logos {
-      margin: 0px 10px 10px 0;
-    }
-    .ib {
-      display: inline-block;
-      margin: 00px 20px 20px 0px;
-    }
-    .footer {
-	margin: 20px 0px 50px 0px;
-    width: 100%;
-    height: 100px;
-    float: center;
-	position: relative;
-    min-width: 800px;
-    }
-    .footerG {
-	margin: 20px 0px 0px 0px;
-    width: 200px;
-    height: 100px;
-    float: left;
-	position: relative;
-    }
-    .footerD {
-	margin: 20px 100px 0px 0px;
-    width: 300px;
-    height: 100px;
-    float: right;
-	position: relative;
-    }
-    .main {
-	margin: 20px 30px 30px 0px;
-    width: 100%;
-    float: left;
-	position: relative;
-    }
-    .superhero {
-    width: 100%;
-    height: 350px;
-    position: relative;
-    min-width: 900px;
-    min-height: 350px;
-    }
-    .title {
-	margin: 50px 0px 0px 0px;
-        width: 600px;
-        height: 100px;
-        float: left;
-	position: relative;
-    }
-    .paper { 
-        margin-right: 100px;
-        margin-top: 50px;
-        width: 200px;
-        height: 400px;
-        float: left;
-        position: relative;
-    }
-    h1.name {
-	font-size: 40px;
-	font-weight: 300;
-        margin-bottom: 10px;
-	display: inline-block;
-    }
-    .email {
-	display: block;
-	font-size: 19px;
-	font-weight: 300;
-	color: #81899C;
-	margin-top: 0px;
-        display: inline-block;
-    }
+  <meta charset="UTF-8">
 
-    .lead {
-	font-size: 20px;
-	font-weight: 300;
-	margin-top: 0px;
-	line-height: 30px;
-        display: inline-block;
-    }
-    .names {
-	font-size: 20px;
-	font-weight: 300;
-	margin-top: 0px;
-	line-height: 20px;
-        display: inline-block;
-    }
-    a.pagelink:link,
-    a.pagelink:visited,
-    a.pagelink:active { color: #81899C; text-decoration: none; }
-    a.pagelink:hover { color: #006699; text-decoration: underline; }
-</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
 
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="myApp">
+
+<div class="row">
 
 <div class="superhero">
     <div class="title">
@@ -170,19 +37,277 @@
   <a href="pdfs/4176.pdf"><img src="thumbs/paper.png" class="img" style="width:300px;height:373px;">Click to view the paper.</a> 
 </div>
 
-
 <div class="main">
 <h2 class="section-title">Abstract</h2>
 <div>
 We present an end-to-end learned system for fusing multiple misaligned photographs of the same scene into a chosen target view. We demonstrate three use cases: 1) color transfer for inferring color for a monochrome view, 2) HDR fusion for merging misaligned bracketed exposures, and 3) detail transfer for reprojecting a high definition image to the point of view of an affordable VR180-camera. While the system can be trained end-to-end, it consists of three distinct steps: feature extraction, image warping and fusion. We present a novel cascaded feature extraction method that enables us to synergetically learn optical flow at different resolution levels. We show that this significantly improves the network’s ability to learn large disparities. Finally, we demonstrate that our alignment architecture outperforms a state-of-the art optical flow network on the image warping task when both systems are trained in an identical manner.
 </div>
 
-
 <h2 class="section-title">Supplementary Materials</h2>
 <li>Supplementary document (<a href="pdfs/4176-supp.pdf">pdf</a>)</li>
 <li>Additional high resolution results (<a href="pdfs/4176-supp-images.pdf">pdf</a>)</li>
 </ul>
 </div>
+
+</div>
+
+
+<div class="row" ng-controller="RowCtrl as controller" ng-init="controller.setImageDir('img/color/'); controller.setImage('color_01', 0.4, 0.5); controller.setViews(['_gt', '_in0', '_in1', '_prediction', '_warp', '_unet']); controller.setView(0)" ng-keydown="controller.onKeyPressed($event)" ng-mouseenter="controller.tooltip = false" ng-mouseleave="controller.tooltip = true" tabindex="0">
+
+<div class="tooltip" ng-class="{'transparent' : !controller.tooltip}">
+  <div class="text">
+    Drag the red square to zoom into different regions.
+    <br><br>
+    Use the menu on the left to switch between Inputs/Outputs.
+    <br>
+    Alternatively, focus on the image and use arrow keys <- and ->.
+  </div>
+</div>
+
+<div class="column width66">
+  <div class="box image-box">
+    <zoom-overlay class="column" image_callback="controller.getImage()" dims_callback="controller.setZoomDimensions(arg)" overlay="controller.overlay_displacement"></zoom-overlay> 
+    <ul class="menu" ng-class="{'hover' : controller.hover}">
+      <li data-hover="Ground Truth" data="GT" ng-click="controller.setView(0)" ng-class="{'selected': controller.isViewSelected(0)}"/>
+      <li data-hover="Input Mono" data="In0" ng-click="controller.setView(1)" ng-class="{'selected': controller.isViewSelected(1)}"/>
+      <li data-hover="Input Color" data="In1" ng-click="controller.setView(2)" ng-class="{'selected': controller.isViewSelected(2)}"/>
+      <li data-hover="PixelFusion" data="PixF" ng-click="controller.setView(3)" ng-class="{'selected': controller.isViewSelected(3)}"/>
+      <li data-hover="Warp Prediction" data="Warp" ng-click="controller.setView(4)" ng-class="{'selected': controller.isViewSelected(4)}"/>
+      <li data-hover="UNet Prediction" data="UNet" ng-click="controller.setView(5)" ng-class="{'selected': controller.isViewSelected(5)}"/>
+    </ul>
+  </div>
+</div>
+
+<div class="column width33">
+  <div class="box">
+    <div class="section-header">
+      <h2>Color Transfer</h2>
+    </div>
+    <div class="row">
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_01_thumbnail.jpg" class="image" ng-click="controller.setImage('color_01', 0.4, 0.5)">
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_02_thumbnail.jpg" class="image" ng-click="controller.setImage('color_02', 0.45, 0.5)">
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_03_thumbnail.jpg" class="image" ng-click="controller.setImage('color_03', 0.45, 0.45)">
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_04_thumbnail.jpg" class="image" ng-click="controller.setImage('color_04', 0.45, 0.4)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_05_thumbnail.jpg" class="image" ng-click="controller.setImage('color_05', 0.1, 0.45)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_06_thumbnail.jpg" class="image" ng-click="controller.setImage('color_06', 0.35, 0.55)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_07_thumbnail.jpg" class="image" ng-click="controller.setImage('color_07', 0.65, 0.75)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/color/color_08_thumbnail.jpg" class="image" ng-click="controller.setImage('color_08', 0.65, 0.45)"/>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row image-box">
+      <div class="column">
+        <zoom image_callback="controller.getImage()" zoom_dims="controller.zoom_dims"></zoom>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div class="row" ng-controller="RowCtrl as controller" ng-init="controller.setImageDir('img/detail/'); controller.setImage('detail_01', 0.65, 0.4); controller.setViews(['_gt', '_in0', '_in1', '_prediction', '_warp', '_unet']); controller.setView(0)" ng-keydown="controller.onKeyPressed($event)" ng-mouseenter="controller.tooltip = false" ng-mouseleave="controller.tooltip = true"tabindex="1">
+
+<div class="tooltip" ng-class="{'transparent' : !controller.tooltip}">
+  <div class="text">
+    Drag the red square to zoom into different regions.
+    <br><br>
+    Use the menu on the left to switch between Inputs/Outputs.
+    <br>
+    Alternatively, focus on the image and use arrow keys <- and ->.
+  </div>
+</div>
+
+<div class="column width66">
+  <div class="box image-box">
+    <zoom-overlay class="column" image_callback="controller.getImage()" dims_callback="controller.setZoomDimensions(arg)" overlay="controller.overlay_displacement"></zoom-overlay> 
+    <ul class="menu" ng-class="{'hover' : controller.hover}">
+      <li data-hover="Ground Truth" data="GT" ng-click="controller.setView(0)" ng-class="{'selected': controller.isViewSelected(0)}"/>
+      <li data-hover="Low Definition" data="In0" ng-click="controller.setView(1)" ng-class="{'selected': controller.isViewSelected(1)}"/>
+      <li data-hover="High Definition" data="In1" ng-click="controller.setView(2)" ng-class="{'selected': controller.isViewSelected(2)}"/>
+      <li data-hover="PixelFusion" data="PixF" ng-click="controller.setView(3)" ng-class="{'selected': controller.isViewSelected(3)}"/>
+      <li data-hover="Warp Prediction" data="Warp" ng-click="controller.setView(4)" ng-class="{'selected': controller.isViewSelected(4)}"/>
+      <li data-hover="UNet Prediction" data="UNet" ng-click="controller.setView(5)" ng-class="{'selected': controller.isViewSelected(5)}"/>
+    </ul>
+  </div>
+</div>
+
+<div class="column width33">
+  <div class="box">
+    <div class="section-header">
+      <h2>Detail Transfer</h2>
+    </div>
+    <div class="row">
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/detail/detail_01_thumbnail.jpg" class="image" ng-click="controller.setImage('detail_01', 0.65, 0.4)" />
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/detail/detail_02_thumbnail.jpg" class="image" ng-click="controller.setImage('detail_02', 0.59 , 0.25)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/detail/detail_03_thumbnail.jpg" class="image" ng-click="controller.setImage('detail_03', 0.5, 0.2)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/detail/detail_04_thumbnail.jpg" class="image" ng-click="controller.setImage('detail_04', 0.2, 0.5)"/>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row image-box">
+      <div class="column">
+        <zoom image_callback="controller.getImage()" zoom_dims="controller.zoom_dims"></zoom>
+      </div>
+    </div>
+  </div>  
+</div>
+
+</div>
+
+
+<div class="row" ng-controller="RowCtrl as controller" ng-init="controller.setImageDir('img/hdr/'); controller.setImage('hdr_01', 0.6, 0.7); controller.setViews(['_gt', '_in0', '_in1', '_prediction', '_unet']); controller.setView(0)" ng-keydown="controller.onKeyPressed($event)" ng-mouseenter="controller.tooltip = false" ng-mouseleave="controller.tooltip = true" tabindex="2">
+
+<div class="tooltip" ng-class="{'transparent' : !controller.tooltip}">
+  <div class="text">
+    Drag the red square to zoom into different regions.
+    <br><br>
+    Use the menu on the left to switch between Inputs/Outputs.
+    <br>
+    Alternatively, focus on the image and use arrow keys <- and ->.
+  </div>
+</div>
+
+<div class="column width66">
+  <div class="box image-box">
+    <zoom-overlay class="column" image_callback="controller.getImage()" dims_callback="controller.setZoomDimensions(arg)" overlay="controller.overlay_displacement"></zoom-overlay> 
+    <ul class="menu" ng-class="{'hover' : controller.hover}">
+      <li data-hover="Ground Truth" data="GT" ng-click="controller.setView(0)" ng-class="{'selected': controller.isViewSelected(0)}"/>
+      <li data-hover="Short Exposure" data="In0" ng-click="controller.setView(1)" ng-class="{'selected': controller.isViewSelected(1)}"/>
+      <li data-hover="Long Exposure" data="In1" ng-click="controller.setView(2)" ng-class="{'selected': controller.isViewSelected(2)}"/>
+      <li data-hover="PixelFusion" data="PixF" ng-click="controller.setView(3)" ng-class="{'selected': controller.isViewSelected(3)}"/>
+      <li data-hover="UNet Prediction" data="UNet" ng-click="controller.setView(4)" ng-class="{'selected': controller.isViewSelected(4)}"/>
+    </ul>
+  </div>
+</div>
+
+<div class="column width33">
+  <div class="box">
+    <div class="section-header">
+      <h2>HDR Fusion (Spatial)</h2>
+    </div>
+    <div class="row">
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_01_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_01', 0.6, 0.7)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_02_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_02', 0.5, 0.75)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_03_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_03', 0.5, 0.5)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_04_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_04', 0.5, 0.6)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_05_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_05', 0.65, 0.3)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_06_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_06', 0.5, 0.1)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/hdr/hdr_07_thumbnail.jpg" class="image" ng-click="controller.setImage('hdr_07', 0.1, 0.3)"/>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row image-box">
+      <div class="column">
+        <zoom image_callback="controller.getImage()" zoom_dims="controller.zoom_dims"></zoom>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div class="row" ng-controller="RowCtrl as controller" ng-init="controller.setImageDir('img/kalantari/'); controller.setImage('kal_01', 0.55, 0.35); controller.setViews(['_gt', '_in0', '_in1', '_in2', '_prediction', '_kalantari']); controller.setView(0)" ng-keydown="controller.onKeyPressed($event)" ng-mouseenter="controller.tooltip = false" ng-mouseleave="controller.tooltip = true" tabindex="3">
+
+<div class="tooltip" ng-class="{'transparent' : !controller.tooltip}">
+  <div class="text">
+    Drag the red square to zoom into different regions.
+    <br><br>
+    Use the menu on the left to switch between Inputs/Outputs.
+    <br>
+    Alternatively, focus on the image and use arrow keys <- and ->.
+  </div>
+</div>
+
+<div class="column width66">
+  <div class="box image-box">
+    <zoom-overlay class="column" image_callback="controller.getImage()" dims_callback="controller.setZoomDimensions(arg)" overlay="controller.overlay_displacement"></zoom-overlay> 
+      <ul class="menu" ng-class="{'hover' : controller.hover}">
+      <li data-hover="Ground Truth" data="GT" ng-click="controller.setView(0)" ng-class="{'selected': controller.isViewSelected(0)}"/>
+      <li data-hover="Short Exposure" data="In0" ng-click="controller.setView(1)" ng-class="{'selected': controller.isViewSelected(1)}"/>
+      <li data-hover="Middle Exposure" data="In1" ng-click="controller.setView(2)" ng-class="{'selected': controller.isViewSelected(2)}"/>
+      <li data-hover="Long Exposure" data="In2" ng-click="controller.setView(3)" ng-class="{'selected': controller.isViewSelected(3)}"/>
+      <li data-hover="PixelFusion" data="PixF" ng-click="controller.setView(4)" ng-class="{'selected': controller.isViewSelected(4)}"/>
+      <li data-hover="Kalantari" data="Kal" ng-click="controller.setView(5)" ng-class="{'selected': controller.isViewSelected(5)}"/>
+    </ul>
+  </div>
+</div>
+
+<div class="column width33">
+  <div class="box">
+    <div class="section-header">
+      <h2>HDR Fusion (Temporal)</h2>
+    </div>
+    <div class="row">
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/kalantari/kal_01_thumbnail.jpg" class="image" ng-click="controller.setImage('kal_01', 0.55, 0.35)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/kalantari/kal_02_thumbnail.jpg" class="image" ng-click="controller.setImage('kal_02', 0.55, 0.35)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/kalantari/kal_03_thumbnail.jpg" class="image" ng-click="controller.setImage('kal_03', 0.55, 0.35)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/kalantari/kal_04_thumbnail.jpg" class="image" ng-click="controller.setImage('kal_04', 0.35, 0.25)"/>
+      </div>
+      <div class="column width33 wide_width25 image-box">
+        <img src="img/kalantari/kal_05_thumbnail.jpg" class="image" ng-click="controller.setImage('kal_05', 0.75, 0.25)"/>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="row image-box">
+      <div class="column">
+        <zoom image_callback="controller.getImage()" zoom_dims="controller.zoom_dims"></zoom>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+
 <div class="footer">
     <div class="footerG">
         <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
@@ -191,3 +316,8 @@ We present an end-to-end learned system for fusing multiple misaligned photograp
         <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
     </div>
 </div>
+
+</div>
+
+</body>
+</html>
