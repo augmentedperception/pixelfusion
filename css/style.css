@@ -1,0 +1,334 @@
+body {
+    font-family: Roboto, "Roboto", sans-serif;
+    background: #f0f0f0;
+    color: #696969;
+    padding: 0px 40px 40px 40px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+}
+h2 { 
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+}
+h3 { 
+    display: block;
+    font-size: 1em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+}
+h4 { 
+    display: block;
+    font-size: 1.4em;
+    margin-top: 0.0em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    color: #000;
+ }
+img {
+    margin: 0px;
+    user-select: none;
+}
+.img {
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
+    margin: 0px 10px 10px 0;
+}
+.image {
+    box-shadow: #000 0em 0em 0em;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    margin: auto;
+    max-width: 100%;
+    opacity: 1.0;
+    transition: opacity 0.5s linear;
+}
+.image:hover {
+    opacity: 0.7;
+}
+.image-box {
+    box-sizing: border-box;
+    padding: 8px;
+    position: relative;
+}
+.image-zoom {
+    cursor: pointer;
+    border: 4px solid #ce160e;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+}
+.logos {
+    margin: 0px 10px 10px 0;
+}
+.ib {
+    display: inline-block;
+    margin: 00px 20px 20px 0px;
+}
+.footer {
+    margin: 20px 0px 50px 0px;
+    width: 100%;
+    height: 100px;
+    float: center;
+    position: relative;
+    min-width: 800px;
+}
+.footerG {
+    margin: 20px 0px 0px 0px;
+    width: 200px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+.footerD {
+    margin: 20px 100px 0px 0px;
+    width: 300px;
+    height: 100px;
+    float: right;
+    position: relative;
+}
+.main {
+    margin: 20px 30px 30px 0px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.superhero {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    min-width: 900px;
+    min-height: 350px;
+}
+.title {
+    margin: 50px 0px 0px 0px;
+    width: 600px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+.paper { 
+    margin-right: 100px;
+    margin-top: 50px;
+    width: 200px;
+    height: 400px;
+    float: left;
+    position: relative;
+}
+h1.name {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.email {
+    display: block;
+    font-size: 19px;
+    font-weight: 300;
+    color: #81899C;
+    margin-top: 0px;
+    display: inline-block;
+}
+.lead {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 0px;
+    line-height: 30px;
+    display: inline-block;
+}
+.names {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 0px;
+    line-height: 20px;
+    display: inline-block;
+}
+a.pagelink:link,
+a.pagelink:visited,
+a.pagelink:active { color: #81899C; text-decoration: none; }
+a.pagelink:hover { color: #006699; text-decoration: underline; }
+.box {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+}
+.box.image-box {
+    min-height: 400px;
+    min-width: 400px;
+    padding: 18px;
+}
+.column {
+    display: grid;
+    float: left;
+    overflow: hidden;
+    width: 100%; 
+    user-select: none;
+}
+.column.width0 {
+    width: 0%;
+}
+.column.width33 {
+    width: 33.33%;
+}
+.column.width66 {
+    width: 66.66%;
+}
+.column.width100 {
+    width: 99.99%;
+}
+@media (min-width: 1400px) {
+    .column.wide_width25 {
+        width: 25%;
+    }
+}
+.menu {
+    display: inline-block;
+    left: 0;
+    list-style: none;
+    margin: 18px 0px 0px 0px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    z-index: 1;
+}
+.menu li {
+    box-shadow: -2px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    background: #dadada;
+    border-bottom: 1px solid #aaaaaa;
+    border-top: 1px solid #aaaaaa;
+    color: #000;
+    cursor: pointer;
+    font-size: 18px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    text-align: center;
+    transition-delay: 0s;
+    transition-duration:  0.3s;
+    transition-property: width, opacity;
+    transition-timing-function: linear;
+    width: 18px;
+}
+.menu li.selected {
+    border-bottom: 2px solid #ce160e;
+    border-left: 1px solid #ce160e;
+    border-right: 1px solid #ce160e;
+    border-top: 1px solid #ce160e;
+    margin-left: -1px;
+    color: white;
+}
+.menu li.selected:hover {
+    border-bottom: 2px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    margin-left: -1px;
+    color: white;
+}
+.menu:hover li,
+.menu:hover li:before,
+.menu.hover li,
+.menu.hover li:before {
+    width: 65px;
+}
+.menu li:hover {
+    background: #ce160e;
+    border-bottom: 2px solid #ce160e;
+    border-left: 1px solid #ce160e;
+    border-right: 1px solid #ce160e;
+    border-top: 1px solid #ce160e;
+    width: 150px;
+}
+.menu li:after {
+    content: attr(data-hover);
+    opacity: 0;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    transition-delay: 0s;
+    transition-duration:  0.3s;
+    transition-property: width, opacity;
+    transition-timing-function: linear;
+    width: 65px;
+}
+.menu li:hover:after {
+    opacity: 1;
+    width: 150px;
+}
+.menu li:before {
+    content: attr(data);
+    opacity: 1;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    transition-delay: 0s;
+    transition-duration:  0.3s;
+    transition-property: width, opacity;
+    transition-timing-function: linear;
+    width: 0px;
+}
+.menu li:hover:before {
+    opacity: 0;
+    width: 65px;
+}
+.row {
+    display: table;
+    position: relative;
+}
+.section-header {
+    background-color: #dadada;
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
+}
+.tooltip {
+    background-color: rgba(0.2, 0.2, 0.2, 0.6); 
+    border: 1px solid #bbbbbb;
+    height: 20%;
+    left: 50%;
+    margin-left: -20%;
+    margin-top: -10%;
+    position: absolute;
+    top: 50%;
+    transition-delay: 0s;
+    transition-duration:  0.3s;
+    transition-property: visibility, opacity;
+    transition-timing-function: linear;
+    vertical-align: middle;
+    visibility: visible;
+    width: 40%;
+    z-index: 1;
+}
+.tooltip .text {
+    color: white;
+    font-size: 1.3em;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tooltip.transparent {
+    opacity: 0%;
+    visibility: hidden;
+}
